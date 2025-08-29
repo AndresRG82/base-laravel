@@ -1,3 +1,4 @@
+import { ThemeProvider } from './Hooks/ThemeContext';
 import '../css/app.css'; // <- imprescindible para Tailwind + DaisyUI
 import './bootstrap';
 
@@ -18,13 +19,17 @@ createInertiaApp({
         if (import.meta.env.SSR) {
             hydrateRoot(
                 el,
-                <div data-theme="nord"><App {...props} /></div> // <- tema DaisyUI
+                                <ThemeProvider>
+                                    <App {...props} />
+                                </ThemeProvider>
             );
             return;
         }
 
         createRoot(el).render(
-            <div data-theme="nord"><App {...props} /></div> // <- tema DaisyUI
+                        <ThemeProvider>
+                            <App {...props} />
+                        </ThemeProvider>
         );
     },
     progress: {

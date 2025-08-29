@@ -1,5 +1,6 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
 const forms = require('@tailwindcss/forms');
+const daisyui = require('daisyui');
 
 module.exports = {
   content: [
@@ -18,10 +19,5 @@ module.exports = {
     },
   },
 
-  plugins: [forms, require("daisyui")],
-
-  daisyui: {
-    themes: ['nord', 'dim'],
-    darkTheme: 'dim',
-  },
+  plugins: [forms, daisyui],
 };
